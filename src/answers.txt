@@ -1,0 +1,118 @@
+1. A class is a set of instructions for creating a new type
+of data. An instance of a specific class is an object that
+fits into that class. Methods in a class can only be applied
+to an instance of that class. In the above scenario, the
+set of salary, benefits, and job description for a Manager
+would be a class, but Joe, the new Manager who just got hired,
+would be an instance of the Manager class.
+
+2. When classes inherit from another class, they allow
+programmers to use a base template without repeating code.
+Subclasses extend a parent class. In this administration
+program, the basic specifications for the GUI could be a
+parent or base class and the GUI for one specific module
+could inherit from that base GUI, adding the details needed
+for that specific module. The company could also utilize a
+base Employee class with hours and payEmployee methods,
+then write Manger, OfficeStaff, and SalesPersonnel classes
+that inherit from the Employee class, but add their own
+methods and salaries.
+
+3. In Java, libraries are external codes and methods that
+can be imported into a project for free in order to save
+time and code. This company's administration program most
+likely uses similar methods and data types to many programs
+that have already been written, so they could use libraries
+to take advantage of the common knowledge base of
+programmers and develop their program faster.
+
+5. public SalesPerson(String id){
+           this.id = id;
+       }
+
+6. Accessor methods are necessary for the SalesPerson class
+because its instance variables are private and therefore
+cannot be accessed outside of the SalesPerson class. To use
+these instance variables, they must be returned with
+accessor methods internal to the SalesPerson class.
+
+7. in attached google drawing
+
+8. If the design of the sales object is changed to include
+new methods or attributes, methods in the SalesPerson class
+would also have to be changed because the SalesPerson class
+has an array of Sales objects and accesses those objects.
+In this version, the sales object is simple and only stores
+an id and value.
+
+9.  102
+    2
+    2550.40
+    1300.00
+
+10. public double calcTotalSales() {
+            double returnDouble = 0;
+            for(int i = 0; i < this.count; i++){
+                returnDouble += this.salesHistory[i].getValue();
+            }
+            return returnDouble;
+        }
+
+11. public String highest(){
+            double highestValue = salesPeople[0].calcTotalSales();
+            String highestId = salesPeople[0].getId();
+            for(int i = 1; i < salesPeople.length; i++){
+                if(salesPeople[i].calcTotalSales() > highestValue){
+                    highestValue = salesPeople[i].calcTotalSales();
+                    highestId = salesPeople[i].getId();
+                }
+            }
+            return highestId;
+        }
+
+12. public void addSales(Sales s, String id){
+            for(int i = 1; i < salesPeople.length; i++){
+                if(salesPeople[i].getId().equals(id)){
+                    salesPeople[i].setSalesHistory(s);
+                }
+            }
+        }
+
+13. There should be a count of the total SalesPeople working for the
+company. In the Sales class, a date should be added so the payroll class
+can determine if the Sales were made that month and therefore if they
+should be included in the salary. The SalesPerson class could also have
+a date of hire or divide the salesHistory up by date. A method could be
+written in the SalesPerson class to access the total combined sales
+of one month specifically.
+
+14. Polymorphism is the ability of an object to take on many forms. The
+SalesPerson class has two possible constructors, allowing for different
+ways of creating SalesPeople. However, there is not a lot of polymorphism.
+This is because the SalesPeople are all relatively uniform and there are
+not distinct types present. The Sales as well also seem to be uniform,
+though they could perhaps be improved by writing different types of Sales
+(commercial, private, etc.) that extend the Sales class and add methods
+and instance variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
